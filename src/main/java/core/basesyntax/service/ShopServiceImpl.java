@@ -15,10 +15,10 @@ public class ShopServiceImpl implements ShopService {
     @Override
     public void process(List<FruitTransaction> fruitTransactions) {
         for (FruitTransaction fruitTransaction : fruitTransactions) {
-            OperationHandler operationHandler = operationStrategy
-                        .get(fruitTransaction.getOperation());
+            OperationHandler operationHandler = operationStrategy.get(
+                    fruitTransaction.getOperation());
             operationHandler.updateNumberOffFruit(fruitTransaction.getFruit(),
-                        fruitTransaction.getAmount());
+                    fruitTransaction.getAmount());
         }
     }
 }
